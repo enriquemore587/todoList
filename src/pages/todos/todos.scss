@@ -2,4 +2,21 @@ page-todos {
     .warning{
         color: red;
     }
+
+    h3:firts-child{
+        margin-top: 0.3em !important;
+    }
+
+    ion-list{
+        .item-inner{
+            border: none !important;
+        }
+        .item-divider{
+            border: none !important;
+            padding-top: 10px;
+            background-color: transparent !important;
+            color: color($colors, light);
+            font-style: italic;
+        }
+    }
 }

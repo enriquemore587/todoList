@@ -20,7 +20,12 @@ export class TodoServiceProvider {
       new TodoModel("esto es tercer tarea"),
       new TodoModel("esto es 4a tarea", false, true),
       new TodoModel("esto es 5a tarea", true, true),
-      new TodoModel("esto es 6a tarea", false, true)
+      new TodoModel("esto es 6a tarea", false, true),
+      new TodoModel("comer", false, true),
+      new TodoModel("Estudiar", true, true),
+      new TodoModel("Jugar", false, true),
+      new TodoModel("Trabajar", true, true),
+      new TodoModel("Caminar", false, true)
     ];
   }
   constructor(public http: HttpClient) {

@@ -14,8 +14,9 @@
 
 
 <ion-content padding>
+  <H3>My list</H3>
   <ion-list>
-    <ion-item-sliding *ngFor="let todo of todoService.todos">
+    <ion-item-sliding *ngFor="let todo of todoService.todos | prioritizedTodosPipe">
       <ion-item [ngStyle]="setTodoStyle(todo)">
         <ion-label>{{todo.description}}</ion-label>
         <ion-checkbox color="dark" [checked]="todo.isDone" (click)="toggleToDo(todo)"></ion-checkbox>
@@ -31,6 +32,11 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
+    <ion-item-divider color="light" *ngIf="( todoService.todos | doneTodosPipe ).length > 0">Done task</ion-item-divider>
+    <ion-item *ngFor="let todo of todoService.todos | doneTodosPipe">
+      <ion-label color="light">{{todo.description}}</ion-label>
+      <ion-checkbox color="light" [checked]="todo.isDone" (click)="toggleToDo(todo)"></ion-checkbox>
+    </ion-item>
   </ion-list>
   <ion-fab right bottom>
     <button ion-fab color="light" (click)="addTask()">
